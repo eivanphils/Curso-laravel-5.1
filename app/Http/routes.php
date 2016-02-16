@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('newroute', function(){
+   return "nueva ruta phils";
+});
+
+Route::get('nombre/{nombre}', function($nombre){
+   return "Nombre: ".$nombre;
+});
+
+Route::get('apellido/{apellido?}', function($apellido = "garcia"){
+   return "Apellido: ".$apellido;
+});
