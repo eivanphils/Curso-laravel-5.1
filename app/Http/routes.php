@@ -10,8 +10,11 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
-Route::get('/', 'FrontController@index');
+//Name to route /
+//Route::get('/',['as' => 'home', 'uses' => 'FrontController@index']);
+Route::get('/','FrontController@index');
 Route::get('contacto', 'FrontController@contacto');
 Route::get('reviews', 'FrontController@reviews');
 Route::get('admin', 'FrontController@admin');
+
+Route::resource('usuario','UsuarioController');
