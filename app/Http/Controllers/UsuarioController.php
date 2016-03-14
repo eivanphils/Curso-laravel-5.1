@@ -15,6 +15,10 @@ use Illuminate\Routing\Route;
 class UsuarioController extends Controller
 {
     public function __construct(){
+        $this->middleware('auth');
+//        Filtro de acceso a los usuarios que no son admin
+//        $this->middleware('admin', ['only' => ['create', 'edit']]);
+        $this->middleware('admin');
         $this->beforeFilter('@find',['edit','update','destroy']);
     }
 

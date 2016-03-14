@@ -19,7 +19,6 @@
 
 <div id="wrapper">
 
-
     <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -35,7 +34,7 @@
         <ul class="nav navbar-top-links navbar-right">
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    {!! Auth::user()->name !!}<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="#"><i class="fa fa-gear fa-fw"></i> Ajustes</a>
@@ -50,6 +49,8 @@
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
+                {{--Restringir visualizacion a usuario que no son admin--}}
+                {{--@if(Auth::user()->id == 12)--}}
                     <li>
                         <a href="#"><i class="fa fa-users fa-fw"></i> Usuario<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -61,6 +62,7 @@
                             </li>
                         </ul>
                     </li>
+                {{--@endif--}}
                     <li>
                         <a href="#"><i class="fa fa-film fa-fw"></i> Pelicula<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -93,6 +95,7 @@
 
     <div id="page-wrapper">
         @yield('content')
+
     </div>
 
 </div>
